@@ -1,6 +1,5 @@
 <template>
    <form class="form">
-      
     <Input :labelText="'First Name'" :inputName="'first name'" />
     <Input :labelText="'Last Name'" :inputName="'last name'" :marginRight="0" />
 
@@ -8,29 +7,18 @@
     <Input :labelText="'Phone Number'" :inputType="'tel'" :inputName="'phone number'" :marginRight="0" />
 
     <Input :labelText="'Position'" :inputName="'position'" :marginBottom="0" />
-
-    <label >
-      <span>Available Companies</span>
-      <select name="companies" >
-        <option multiple v-for="option in options" :key="option" :value="option">{{option}}</option>
-      </select>
-    </label>
-    <!-- <va-select
-      class="mb-4"
-      label="Multiple select"
-      :options="options"
-      v-model="valueMultiple"
-      multiple
-    /> -->
+    <CustomSelect :labelText="'Available Companies'" :placeholder="'Companies'" :options="options" />
   </form>
 </template>
 
 <script>
 import Input from '../Input'
+import CustomSelect from '../CustomSelect'
 export default {
     name: 'MainInfoTab',
     components: {
-      Input
+      Input,
+      CustomSelect
     },
     data() {
       return {
@@ -42,11 +30,42 @@ export default {
           delivery: false,
           type: [],
           resource: '',
-          desc: ''
+          desc: '',
+          
         },
-        options: ['Precoro', 'Precoro Develop', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
+        value2: [],
+        options: [
+          {
+            value: 'Precoro',
+            label: 'Precoro',
+          },
+          {
+            value: 'Precoro Develop',
+            label: 'Precoro Develop',
+          },
+          {
+            value: 'Option3',
+            label: 'Option3',
+          },
+          {
+            value: 'Option4',
+            label: 'Option4',
+          },
+          {
+            value: 'Option5',
+            label: 'Option5',
+          },
+        ],
         valueSingle: '',
         valueMultiple: '',
+        switch: false
+      }
+    },
+    watch: {
+      switchValue(e) {
+        console.log(e, 'in tab1');
+        this.switch = e
+        return this.switch
       }
     },
     methods: {
@@ -72,4 +91,5 @@ export default {
       margin-right: 20px;
     }
 }
+
 </style>

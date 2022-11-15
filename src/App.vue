@@ -20,7 +20,12 @@
 
     <div class="bottom-wrapper">
       <div class="switch-wrapper" v-if="activeNameComponent === 'MainInfoTab'">
-        <va-switch v-model="swithValue" color="#415ADA" />
+        <el-switch
+          v-model="swithValue"
+          class="ml-2"
+          style="--el-switch-on-color: #415ADA; --el-switch-off-color: #F4F4FF"
+          size="large"
+        />
         <span>Active in all companies</span>
         <img src="./assets/image/Info.png" alt="Info icon">
       </div>
@@ -52,7 +57,7 @@ export default {
     return {
       activeNameComponent: 'MainInfoTab',
       completedTabID: '',
-      swithValue: false,
+      swithValue: true,
     }
   },
   methods: {
@@ -62,7 +67,7 @@ export default {
     },
     handleCloseButton() {
       console.log('close');
-    }
+    },
   }
 }
 </script>
