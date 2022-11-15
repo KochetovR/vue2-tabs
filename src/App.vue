@@ -66,13 +66,12 @@ export default {
 #app {
 
 }
-
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 867px;
-    min-height: 466px;
+    // min-height: 466px;
     margin: 57px auto 0;
     background-color: $white-color;
     box-shadow: 0px 8px 16px rgba(54, 62, 113, 0.24);
@@ -102,9 +101,11 @@ export default {
   right: 27px;
   width: 26px;
   height: 26px;
+  padding: 0;
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  border: none;
 }
 
 .bottom-wrapper {

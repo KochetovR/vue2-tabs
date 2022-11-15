@@ -1,7 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import './assets/scss/index.scss'
 
-
-createApp(App).use(ElementUI).mount('#app')
+createApp(App).mount('#app')
