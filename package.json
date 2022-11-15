@@ -11,7 +11,8 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.15.10",
     "sass-loader": "^10.3.1",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vuestic-ui": "^1.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.13",
@@ -22,7 +23,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "node-sass": "^7.0.3",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "vue-cli-plugin-vuestic-ui": "~1.0.11"
   },
   "eslintConfig": {
     "root": true,

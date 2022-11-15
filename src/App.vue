@@ -19,6 +19,11 @@
     </keep-alive>
 
     <div class="bottom-wrapper">
+      <div class="switch-wrapper" v-if="activeNameComponent === 'MainInfoTab'">
+        <va-switch v-model="swithValue" color="#415ADA" />
+        <span>Active in all companies</span>
+        <img src="./assets/image/Info.png" alt="Info icon">
+      </div>
       <button type='button' @click="handleNextStep" class="button-next">
         <span>Next Step</span>
       </button>
@@ -46,7 +51,8 @@ export default {
   data() {
     return {
       activeNameComponent: 'MainInfoTab',
-      completedTabID: ''
+      completedTabID: '',
+      swithValue: false,
     }
   },
   methods: {
@@ -109,8 +115,19 @@ export default {
 }
 
 .bottom-wrapper {
+  display: flex;
+  align-items: baseline;
   padding: 25px 24px 18px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  & span {
+    margin: 0 10px 0 8px;
+  }
 }
 
 .button-next {
